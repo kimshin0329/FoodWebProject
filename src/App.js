@@ -7,6 +7,7 @@ import Kitchen from './Kitchen/Kitchen';
 import Login from './Login/Login';
 import QNA from './QnA/QNA';
 import Reservations from './Reservations/Reservations';
+import Signup from './Login/Signup';
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/Menu" element={<Menu/>} />
       <Route path="/Kitchen" element={<Kitchen/>} />
       <Route path="/Login" element={<Login/>} />
+      <Route path="/signup" element={<Signup/>} />
       <Route path="/Q&A" element={<QNA/>} />
       <Route path="/Reservations" element={<Reservations/>} />
 

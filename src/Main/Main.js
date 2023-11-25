@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components";
 import Logo from '../images/Logo.png';
 import '../Logo.css';
@@ -31,18 +31,19 @@ export default function Main(){
     return (
         <div className="Main">
             <header>
-            <h1><img className="logoimg" src={Logo}/>
-            { " \u00A0"}{ " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/");}}>MAIN</Button>
-            { " \u00A0"}{ " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Menu");}}>MENU</Button>
-            { " \u00A0"}{ " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Kitchen");}}>OUR KITCHEN</Button>
-            { " \u00A0"}{ " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Reservations");}}>RESERVATIONS</Button>
-            { " \u00A0"}{ " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Q&A");}}>Q&A</Button>
-            { " \u00A0"}{ " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Login");}}>LOG IN</Button></h1></header>
-            <nav>
+            <h1><img className="logoimg" src={Logo} onClick={()=>{navigate("/");}}/>
+            { " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/");}}>MAIN</Button>
+            { " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Menu");}}>MENU</Button>
+            { " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Kitchen");}}>OUR KITCHEN</Button>
+            { " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Reservations");}}>RESERVATIONS</Button>
+            { " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Q&A");}}>Q&A</Button>
+            { " \u00A0"}{ " \u00A0"}<Button onClick={()=>{navigate("/Login");}}>LOG IN</Button></h1></header>
+            
             <h2><img className="backgroundimg" src={background}/></h2>
-            </nav>
+            
             <footer className="footer">만든 사람 : 안양대학교 융합소프트웨어 전공 2020E7410 </footer>
             
+        
         </div>
     )
 }
