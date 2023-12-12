@@ -1,32 +1,40 @@
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
-import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import Logo from '../images/Logo.png';
-import '../Logo.css';
+import axios from "axios";
+import HorizonLine from "../HorizonLine";
 
 
-const goLogin = () => {
-  navigator('/Login')
-}
 
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  actions.resetForm();
-  alert('회원가입이 완료되었습니다.')
-  window.location = '/Login';
-  
-    
-  
-  
-  
-  
-  
-};
 
 const Signup = () => {
+  
+  
+  const onSubmit = async (values) => {
+    
+    const { email, nickname, password } = values
+    
+    await axios.post("http://localhost:8000/api/signup",{
+      email,
+      nickname,
+      password,
+    })
+    .then((res) => {
+      alert("회원가입이 완료되었습니다.")
+      navigate('/Login');
+      
+    })
+    .catch((e)=> {
+      alert("중복된 이메일 또는 닉네임이 존재합니다.")
+      
+    })
+    
+    
+
+    
+   
+};
+
   const {
     values,
     errors,
@@ -44,15 +52,17 @@ const Signup = () => {
     },
     validationSchema: basicSchema,
     onSubmit,
+    
   });
   const navigate = useNavigate();
-  console.log(errors);
-
+  
+  
 
   return (
     <div className="header">
-      <h1><img className="logoimg" src={Logo} onClick={()=>{navigate("/");}}/></h1>
+      <h1><img className="logoimg" src="/images/Logo.png" onClick={()=>{navigate("/");}}/></h1>
       <h2>회원가입 페이지입니다.</h2>
+      <HorizonLine/>
     <form onSubmit={handleSubmit} autoComplete="off">
       <label htmlFor="email">이메일</label>
       <input

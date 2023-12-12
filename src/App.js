@@ -8,6 +8,9 @@ import Login from './Login/Login';
 import QNA from './QnA/QNA';
 import Reservations from './Reservations/Reservations';
 import Signup from './Login/Signup';
+import ReservationsPage from './Reservations/ReservationsPage';
+import ReservationsSuccess from './Reservations/ReservationsSuccess';
+
 
 
 
@@ -24,6 +27,9 @@ function App() {
       <Route path="/signup" element={<Signup/>} />
       <Route path="/Q&A" element={<QNA/>} />
       <Route path="/Reservations" element={<Reservations/>} />
+      <Route path="/ReservationsPage" element={<ReservationsPage/>} />
+      <Route path="/ReservationsSuccess" element={<ReservationsSuccess/>}/>
+      
 
       
     </Routes>
